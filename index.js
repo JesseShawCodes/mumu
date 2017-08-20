@@ -6,7 +6,7 @@ Registered to	bquietndrive87
 */
 
 var key = "48a68fa743a6e709380166a2342c0c27";
-var url = "http://ws.audioscrobbler.com/2.0/";
+var url = "https://ws.audioscrobbler.com/2.0/";
 
 function getApiData(searchTerm) {
     console.log(`Function has been executed. You have searched for ${searchTerm}`);
