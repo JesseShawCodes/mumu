@@ -1,0 +1,29 @@
+main {
+    margin: auto 0px;
+    text-align: center;
+}
+
+/*Form*/
+
+form {
+    display: inline-block;
+}
+
+.userinput {
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    display: block;
+}
+
+.submit {
+    width: 200px;
+    height: 30px;
+    display: block;
+    border: 0px;
+    background: green;
+    color: white;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 8px;
+}

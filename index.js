@@ -19,18 +19,21 @@ function getApiData(searchTerm) {
     }
     $.getJSON(url, settings, function(result){
         $.each(result, function(i, field){
-            for (var i = 0; i < 5; i++) {
-                result.preventDefault;
-                $(".js-search-results").append(`<h1>${result.topalbums.album[i].name}</h1>`)
+            for (var i = 0; i < 3; i++) {
+                $(".js-search-results").append(`<h1>${i + 1}. ${result.topalbums.album[i].name}</h1>`);
+                $(".js-search-results").append(`<img src="${result.topalbums.album[i].image[3]["#text"]}">`);
             }
         })
     });
 }
 
+function watchSubmit() {
+    $("form").on("submit", function(e) {
+        e.preventDefault();
+        var name = $(".userinput").val();
+        console.log(name);
+        getApiData(name);
+    })    
+}
 
-$("form").on("submit", function(e) {
-    e.preventDefault();
-    var name = $(".userinput").val();
-    console.log(name);
-    getApiData(name);
-})
+$(watchSubmit);
