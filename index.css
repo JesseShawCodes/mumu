@@ -1,6 +1,18 @@
+body {
+    background-color: #4ABDAC;
+}
+
 main {
     margin: auto 0px;
     text-align: center;
+}
+
+h1 {
+    color: #D4DCE3;
+}
+
+h2 {
+    color: #DFDCE3;
 }
 
 /*Form*/
@@ -14,6 +26,7 @@ form {
     height: 30px;
     font-size: 20px;
     display: block;
+    margin: 0px auto;
 }
 
 .submit {
@@ -21,9 +34,15 @@ form {
     height: 30px;
     display: block;
     border: 0px;
-    background: green;
-    color: white;
+    background: #FC4A1A;
+    color: #D4DCE3;
     font-size: 18px;
     margin: auto;
     margin-top: 8px;
+}
+
+/*Results*/
+
+img {
+    width: 400px;
 }
