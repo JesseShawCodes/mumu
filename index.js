@@ -7,6 +7,13 @@ Registered to	bquietndrive87
 
 var key = "48a68fa743a6e709380166a2342c0c27";
 var url = "https://ws.audioscrobbler.com/2.0/";
+var albums = [];
+
+function getAlbumInfo(albumName) {
+    console.log(albumName);
+}
+
+
 
 function getApiData(searchTerm) {
     const settings = {
@@ -15,13 +22,17 @@ function getApiData(searchTerm) {
         method: "artist.gettopalbums",
         format: "json",
         autocorrect: 1
-    }
+    };
     $.getJSON(url, settings, function(result){
         $.each(result, function(i, field){
             for (var i = 0; i < 3; i++) {
-                $(".js-search-results").append(`<div class="searchresult"><h2>${i + 1}. ${result.topalbums.album[i].name}</h2><img src="${result.topalbums.album[i].image[3]["#text"]}" alt="albumcover"></div>`);
+                $(".js-search-results").append(`<div class="searchresult"><h2>${result.topalbums.album[i].name}</h2><img src="${result.topalbums.album[i].image[3]["#text"]}" alt="albumcover"></div>`);
             }
-        })
+        });
+        for (var i = 0; i < 3; i++) {
+            let albumName = `${result.topalbums.album[i].name}`;
+            albums.push(albumName);
+        }
     });
 }
 
@@ -31,6 +42,7 @@ function watchSubmit() {
         $(".searchresult").remove();
         var name = $(".userinput").val();
         getApiData(name);
+        getAlbumInfo(albums);
     })
 }
 
