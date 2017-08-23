@@ -15,34 +15,35 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const API_KEY = "AIzaSyB5wDWKKvdRnOYBrt1dLh7U1vOKKnvsgo4";
 
 function getYouTube(searchTerm, albums, callback) {
-    var loc = [];
-    for (var i = 0; i < albums.length; i++) {
-        loc[i] = `div.album${i + 1} > div`
+    const query = {
+        q: `${searchTerm} ${albums[0]}`,
+        part: 'snippet',
+        key: API_KEY
     }
-    // console.log(loc);
-    for (var i = 0; i < albums.length; i++) {
-        const query = {
-            q: `${searchTerm} ${albums[i]}`,
-            part: 'snippet',
-            key: API_KEY,
-            viewCount: "viewCount"
-        }
-        // console.log(query.q);
-        var classname = loc[i];
-        var searchTerm = query.q;
-        // console.log(loc[i] + " " + searchTerm);
-        var ytResult = [];
-        $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
-    } 
+    $.getJSON(YOUTUBE_SEARCH_URL, query, function(result) {
+            $(`.album1 .yt-results0`).append().html(`
+            <div class="album1results">
+            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <h4>${result.items[0].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[1].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[2].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[3].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[4].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
+            </div>`);
+        });
+    $(".album1 .ytlabel").on("click", function(e) {
+        e.preventDefault();
+        $(".yt-results0").slideToggle();
+    });
 }
-
-
-
-
 
 //Last.fm Album info//
 function getAlbumInfo(albumName, searchTerm) {
-    // console.log(albumName);
     const settings = {
         artist: `${searchTerm}`,
         album: albumName,
@@ -54,11 +55,9 @@ function getAlbumInfo(albumName, searchTerm) {
     for (var i = 0; i < 3; i++) {
         settings.album = albumName[i];
         $.getJSON(url, settings, function(result) {
-            // console.log(result.album.wiki.content);
             var test = "test " + i;
             var albumtag = ".album" + i;
         })
-        // getWikiInfo(albumName, searchTerm);
     }
 };
 
@@ -76,10 +75,11 @@ function getApiData(searchTerm) {
     $.getJSON(url, settings, function(result){
         $.each(result, function(i, field){
             for (var i = 0; i < 3; i++) {
-                $(".albumsection").append(`
+                $(".albumsection").append(
+                `
                 <div class="album${i + 1}"><h2>${result.topalbums.album[i].name}</h2><img src="${result.topalbums.album[i].image[3]["#text"]}" alt="albumcover">
-                <div class="yt-results">
-                <h3 class="ytheading">Listen on YouTube</h3>
+                <div class="yt-results0">
+                <h3 class="ytheading"></h3>
                 </div>
                 </div>
                 `);
@@ -90,17 +90,15 @@ function getApiData(searchTerm) {
             albums.push(albumName);
         }
     getYouTube(searchTerm, albums);
-    // console.log(albums);
-    // getAlbumInfo(albums, searchTerm);
-    // getWikiInfo(albums, searchTerm);
-    // console.log(albums);
     });
-    
+    $(".albumheader").on("click", function(e) {
+        e.preventDefault();
+        $(".albumsection").slideToggle();
+    });
 }
 
 //Artist Info info function//
 function getArtistInfo(searchTerm) {
-    // console.log(searchTerm);
     const settings = {
         artist: `${searchTerm}`,
         api_key: key,
@@ -114,17 +112,14 @@ function getArtistInfo(searchTerm) {
         $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio</h2></div>      <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}"><p>${x}</p></div>`);
     })
     $(hideSections);
-}
-
-function hideSections() {
-    $("body > main > div.js-search-results > div.artistinfo").on("click", function(e) {
+    $("div.artistinfo").on("click", function(e) {
         e.preventDefault();
         $("div.artistcontent").slideToggle();
     });
-    $("div.albums > h2").on("click", function(e) {
-        e.preventDefault();
-        $(".albumsection").slideToggle();
-    })
+}
+
+function hideSections() {
+
 }
 
 function watchSubmit() {
@@ -136,12 +131,9 @@ function watchSubmit() {
         for (var i = 0; i < 3; i++) {
             $(`.album${i+1}`).remove();
         }
-        // $(".searchresult").remove();
         var name = $(".userinput").val();
         getArtistInfo(name);
         getApiData(name);
-        // getYouTube(name);
-        // getAlbumInfo(albums);
     })
 }
 

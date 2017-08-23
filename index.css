@@ -41,13 +41,10 @@ nav button:hover {
 
 /*Headers*/
 
-h1 {
+h1, h2 {
     color: #D4DCE3;
 }
 
-h2 {
-    color: #DFDCE3;
-}
 
 
 /*Form*/
@@ -109,12 +106,16 @@ div.artistinfo > p {
     text-align: center;
 }
 
-.albums h3 {
+.albums h3, h4 {
     color: #D4DCE3;
 }
 
 img {
     width: 400px;
+}
+
+.album1 .ytlabel {
+    color: #4ABDAC;
 }
 
 /*YouTube Search*/
