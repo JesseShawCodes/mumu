@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #4ABDAC;
 }
@@ -7,6 +11,36 @@ main {
     text-align: center;
 }
 
+
+
+/*Navigation*/
+
+nav {
+    list-style: none;
+    background-color: #FC4A1A;
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+nav li {
+    display: inline;
+}
+
+nav button {
+    background-color: #FC4A1A;
+    border: none;
+    color: #D4DCE3;
+    font-size: 25px;
+}
+
+nav button:hover {
+    background-color: #4ABDAC;
+}
+
+
+/*Headers*/
+
 h1 {
     color: #D4DCE3;
 }
@@ -14,6 +48,7 @@ h1 {
 h2 {
     color: #DFDCE3;
 }
+
 
 /*Form*/
 
@@ -43,6 +78,78 @@ form {
 
 /*Results*/
 
+/*Artist Bio*/
+
+div.artistinfo > div > h2 {
+    text-align: center;
+}
+
+div.artistinfo > p {
+    color: #D4DCE3;
+}
+
+/*Album List*/
+
+.albums {
+    width: 100%;
+    display: inline-block; 
+    border: 5px solid #FC4A1A;
+    margin-top: 50px;
+    background-color: #FC4A1A;
+    padding: 20px;
+}
+
+
+.album1, .album2, .album3 {
+    padding: 0px 10px 0px 10px;
+    margin: auto;
+}
+
+.albums h2 {
+    text-align: center;
+}
+
+.albums h3 {
+    color: #D4DCE3;
+}
+
 img {
     width: 400px;
+}
+
+/*YouTube Search*/
+
+.youtube-search {
+    background-color: #FC4A1A;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #FC4A1A;
+    color: #D4DCE3;
+    position: absolute;
+    width: 100%;
+}
+
+/*Hidden*/
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .albums img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .albums img {
+        width: 250px;
+    }
+    div.artistinfo > p {
+        color: #D4DCE3;
+        font-size: 1.4em;
+    }
 }
