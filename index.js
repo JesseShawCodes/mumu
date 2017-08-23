@@ -36,10 +36,50 @@ function getYouTube(searchTerm, albums, callback) {
             <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
             </div>`);
         });
-    $(".album1 .ytlabel").on("click", function(e) {
-        e.preventDefault();
-        $(".yt-results0").slideToggle();
-    });
+
+    
+    const query2 = {
+        q: `${searchTerm} ${albums[1]}`,
+        part: 'snippet',
+        key: API_KEY
+    }
+    $.getJSON(YOUTUBE_SEARCH_URL, query2, function(result) {
+            $(`.album2 .yt-results0`).append().html(`
+            <div class="album1results">
+            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <h4>${result.items[0].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[1].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[2].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[3].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[4].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
+            </div>`);
+        });
+    const query3 = {
+        q: `${searchTerm} ${albums[2]}`,
+        part: 'snippet',
+        key: API_KEY
+    }
+    $.getJSON(YOUTUBE_SEARCH_URL, query3, function(result) {
+            $(`.album3 .yt-results0`).append().html(`
+            <div class="album1results">
+            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <h4>${result.items[0].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[1].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[2].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[3].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <h4>${result.items[4].snippet.title}</h4>
+            <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
+            </div>`);
+        });
 }
 
 //Last.fm Album info//
