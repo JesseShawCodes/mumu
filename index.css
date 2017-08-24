@@ -5,6 +5,7 @@
 
 body {
     background-color: #4ABDAC;
+    font-family: sans-serif;
 }
 
 main {
@@ -122,9 +123,6 @@ img {
     color: #4ABDAC;
 }
 
-.yt-results {
-    
-}
 
 /*YouTube Search*/
 
@@ -164,5 +162,8 @@ footer {
     div.artistinfo > p {
         color: #D4DCE3;
         font-size: 1.4em;
+    }
+    .artistinfo img {
+        width: 250px;
     }
 }
