@@ -72,11 +72,12 @@ h2 {
 
 .albums {
     width: 100%;
-    display: inline-block; 
+    /* display: inline-block; */
     border: 5px solid #FC4A1A;
     margin-top: 50px;
     background-color: #FC4A1A;
     padding: 20px;
+    
 }
 
 
@@ -147,7 +148,7 @@ footer {
     background-color: #FC4A1A;
     color: #D4DCE3;
     position: absolute;
-    width: 90%;
+    width: 100%;
 }
 
 /*Hidden*/
