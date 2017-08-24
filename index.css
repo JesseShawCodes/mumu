@@ -14,39 +14,17 @@ main {
 }
 
 
-
-/*Navigation*/
-
-nav {
-    list-style: none;
-    background-color: #FC4A1A;
-    margin-top: 5px;
-    width: 100%;
-    text-align: left;
-}
-
-nav li {
-    display: inline;
-}
-
-nav button {
-    background-color: #FC4A1A;
-    border: none;
-    color: #D4DCE3;
-    font-size: 25px;
-}
-
-nav button:hover {
-    background-color: #4ABDAC;
-}
-
-
 /*Headers*/
 
 h1, h2 {
     color: #D4DCE3;
 }
 
+.showfields {
+    font-size: 1.1em;
+    color: #ecf5fc;
+    font-weight: 900;
+}
 
 
 /*Form*/
@@ -79,7 +57,7 @@ form {
 
 /*Artist Bio*/
 
-div.artistinfo > div > h2 {
+h2 {
     text-align: center;
 }
 
@@ -123,6 +101,33 @@ img {
     color: #4ABDAC;
 }
 
+.arrow-down, .arrow-down2 {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #D4DCE3;
+    display: inline-block;
+    margin-left: 10px;
+}
+.rotated {
+    transform: rotate(-90deg);
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #D4DCE3;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.rotated2 {
+    transform: rotate(90deg);
+}
+
 
 /*YouTube Search*/
 
@@ -134,13 +139,15 @@ img {
     display: none;
 }
 
+
+
 /*Footer*/
 
 footer {
     background-color: #FC4A1A;
     color: #D4DCE3;
     position: absolute;
-    width: 100%;
+    width: 90%;
 }
 
 /*Hidden*/

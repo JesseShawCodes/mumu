@@ -22,7 +22,7 @@ function getYouTube(searchTerm, albums, callback) {
     $.getJSON(YOUTUBE_SEARCH_URL, query, function(result) {
             $(`.album1 .yt-results0`).append().html(
             `
-            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="ytlabel"><h3>Listen to album on YouTube<span class="arrow-right"></span></h3></div>
             <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
@@ -45,7 +45,7 @@ function getYouTube(searchTerm, albums, callback) {
     $.getJSON(YOUTUBE_SEARCH_URL, query2, function(result) {
             $(`.album2 .yt-results0`).append().html(
             `
-            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="ytlabel"><h3>Listen to album on YouTube<span class="arrow-right"></span></h3></div>
             <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
@@ -68,7 +68,7 @@ function getYouTube(searchTerm, albums, callback) {
     $.getJSON(YOUTUBE_SEARCH_URL, query3, function(result) {
             $(`.album3 .yt-results0`).append().html(
             `
-            <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="ytlabel"><h3>Listen to album on YouTube<span class="arrow-right"></span></h3></div>
             <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
@@ -82,7 +82,7 @@ function getYouTube(searchTerm, albums, callback) {
             <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
             </div>`);
         });
-    setTimeout(function() { hideFields(); }, 5000);
+    setTimeout(function() { hideFields(); }, 1000);
 }
 
 function getApiData(searchTerm) {
@@ -94,9 +94,10 @@ function getApiData(searchTerm) {
         format: "json",
         autocorrect: 1
     };
-    $(".albums").html(`<h2 class="albumheader">Albums</h2><div class="albumsection"></div>`);
+    $(".albums").html(`<h2 class="albumheader">Albums</h2><span class="albumsection"></span>`);
     $.getJSON(url, settings, function(result){
         $.each(result, function(i, field){
+            $(".albumheader").append(`<div class="arrow-down"></div> `)
             for (var i = 0; i < 3; i++) {
                 $(".albumsection").append(
                 `
@@ -130,8 +131,8 @@ function getArtistInfo(searchTerm) {
         var x = result.artist.bio.content;
         var n = x.indexOf(".", 1500);
         if (x.length > 1000) y = x.substring(0, n + 1);
-        $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio</h2></div>      
-            <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}"><p>${y}</p></div>`);
+        $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio<span class="arrow-down2"></span></h2></div>     
+            <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}" alt="artistphoto"><p>${y}</p></div>`);
     });
 
 }
@@ -156,16 +157,21 @@ $(watchSubmit);
 function hideFields() {
     $(".ytlabel").on("click", function(e) {
         e.preventDefault();
-        $(this).next().slideToggle();
+        $(this).next().slideToggle(1000);
+        $(".arrow-right").toggleClass('rotated2');
     });
+    //artist info//
     $(".artistinfoswitch").on("click", function(e) {
         e.preventDefault();
-        $(".artistcontent").slideToggle();
+        $(".artistcontent").slideToggle(1000);
+        $(this).toggleClass("showfields");
+        $(`.arrow-down2`).toggleClass('rotated');
     });
     $(".albumheader").on("click", function(e) {
         e.preventDefault();
         console.log("album slide toggle has run")
-        $(".albumsection").slideToggle();
+        $(".albumsection").slideToggle(1000);
+        $(`.arrow-down`).toggleClass('rotated');
     });
 }
 
