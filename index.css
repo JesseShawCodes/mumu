@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-style: sans-serif;
 }
 
 body {
@@ -81,8 +82,11 @@ div.artistinfo > div > h2 {
     text-align: center;
 }
 
-div.artistinfo > p {
+.artistinfo p {
     color: #D4DCE3;
+    font-size: 1.2em;
+    text-align: left;
+    margin-top: 10px;
 }
 
 /*Album List*/
@@ -118,10 +122,18 @@ img {
     color: #4ABDAC;
 }
 
+.yt-results {
+    
+}
+
 /*YouTube Search*/
 
 .youtube-search {
     background-color: #FC4A1A;
+}
+
+.searchresults {
+    display: none;
 }
 
 /*Footer*/

@@ -7,7 +7,6 @@ Registered to	bquietndrive87
 
 var key = "48a68fa743a6e709380166a2342c0c27";
 var url = "https://ws.audioscrobbler.com/2.0/";
-// var albums = [];
 
 
 //Youtube Search API
@@ -21,86 +20,70 @@ function getYouTube(searchTerm, albums, callback) {
         key: API_KEY
     }
     $.getJSON(YOUTUBE_SEARCH_URL, query, function(result) {
-            $(`.album1 .yt-results0`).append().html(`
-            <div class="album1results">
+            $(`.album1 .yt-results0`).append().html(
+            `
             <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[1].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[2].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[3].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[4].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
-            </div>`);
+            </div>`
+            );
         });
-
-    
     const query2 = {
         q: `${searchTerm} ${albums[1]}`,
         part: 'snippet',
         key: API_KEY
-    }
+    };
     $.getJSON(YOUTUBE_SEARCH_URL, query2, function(result) {
-            $(`.album2 .yt-results0`).append().html(`
-            <div class="album1results">
+            $(`.album2 .yt-results0`).append().html(
+            `
             <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[1].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[2].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[3].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[4].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
-            </div>`);
+            </div>`
+            );
         });
     const query3 = {
         q: `${searchTerm} ${albums[2]}`,
         part: 'snippet',
         key: API_KEY
-    }
+    };
     $.getJSON(YOUTUBE_SEARCH_URL, query3, function(result) {
-            $(`.album3 .yt-results0`).append().html(`
-            <div class="album1results">
+            $(`.album3 .yt-results0`).append().html(
+            `
             <div class="ytlabel"><h3>Listen to album on YouTube</h3></div>
+            <div class="searchresults">
             <h4>${result.items[0].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[0].id.videoId}' target="_blank"><img src='${result.items[0].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[1].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[1].id.videoId}' target="_blank"><img src='${result.items[1].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[2].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[2].id.videoId}' target="_blank"><img src='${result.items[2].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[3].snippet.title}</h4>
-            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a></div>
+            <a href='http://www.youtube.com/watch?v=${result.items[3].id.videoId}' target="_blank"><img src='${result.items[3].snippet.thumbnails.high.url}'></a>
             <h4>${result.items[4].snippet.title}</h4>
             <a href='http://www.youtube.com/watch?v=${result.items[4].id.videoId}' target="_blank"><img src='${result.items[4].snippet.thumbnails.high.url}'></a></div>
             </div>`);
         });
+    setTimeout(function() { hideFields(); }, 5000);
 }
-
-//Last.fm Album info//
-function getAlbumInfo(albumName, searchTerm) {
-    const settings = {
-        artist: `${searchTerm}`,
-        album: albumName,
-        api_key: key,
-        method: "album.getInfo",
-        format: "json",
-        autocorrect: 1
-    };
-    for (var i = 0; i < 3; i++) {
-        settings.album = albumName[i];
-        $.getJSON(url, settings, function(result) {
-            var test = "test " + i;
-            var albumtag = ".album" + i;
-        })
-    }
-};
-
 
 function getApiData(searchTerm) {
     var albums = [];
@@ -131,10 +114,6 @@ function getApiData(searchTerm) {
         }
     getYouTube(searchTerm, albums);
     });
-    $(".albumheader").on("click", function(e) {
-        e.preventDefault();
-        $(".albumsection").slideToggle();
-    });
 }
 
 //Artist Info info function//
@@ -147,18 +126,13 @@ function getArtistInfo(searchTerm) {
         format: "json",
     }
     $.getJSON(url, settings, function(result){
+        var y;
         var x = result.artist.bio.content;
-        if (x.length > 1000) x = x.substring(0, 1000);
-        $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio</h2></div>      <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}"><p>${x}</p></div>`);
-    })
-    $(hideSections);
-    $("div.artistinfo").on("click", function(e) {
-        e.preventDefault();
-        $("div.artistcontent").slideToggle();
+        var n = x.indexOf(".", 1500);
+        if (x.length > 1000) y = x.substring(0, n + 1);
+        $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio</h2></div>      
+            <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}"><p>${y}</p></div>`);
     });
-}
-
-function hideSections() {
 
 }
 
@@ -179,6 +153,19 @@ function watchSubmit() {
 
 $(watchSubmit);
 
-
-
+function hideFields() {
+    $(".ytlabel").on("click", function(e) {
+        e.preventDefault();
+        $(this).next().slideToggle();
+    });
+    $(".artistinfoswitch").on("click", function(e) {
+        e.preventDefault();
+        $(".artistcontent").slideToggle();
+    });
+    $(".albumheader").on("click", function(e) {
+        e.preventDefault();
+        console.log("album slide toggle has run")
+        $(".albumsection").slideToggle();
+    });
+}
 
