@@ -129,7 +129,7 @@ function getArtistInfo(searchTerm) {
     $.getJSON(url, settings, function(result){
         var y;
         var x = result.artist.bio.content;
-        var n = x.indexOf(".", 1500);
+        var n = x.indexOf(". ", 1500);
         if (x.length > 1000) y = x.substring(0, n + 1);
         $(".artistinfo").html(`<div class="artistinfoswitch"><h2>Artist Bio<span class="arrow-down2"></span></h2></div>     
             <div class="artistcontent"><img src="${result.artist.image[2]["#text"]}" alt="artistphoto"><p>${y}</p></div>`);
@@ -154,11 +154,24 @@ function watchSubmit() {
 
 $(watchSubmit);
 
+/*
+This function hides certain fields in order to make the app more managable and interactive.
+*/
 function hideFields() {
-    $(".ytlabel").on("click", function(e) {
+    $(".album1 .ytlabel").on("click", function(e) {
         e.preventDefault();
         $(this).next().slideToggle(1000);
-        $(".arrow-right").toggleClass('rotated2');
+        $(".album1 .arrow-right").toggleClass('rotated2');
+    });
+    $(".album2 .ytlabel").on("click", function(e) {
+        e.preventDefault();
+        $(this).next().slideToggle(1000);
+        $(".album2 .arrow-right").toggleClass('rotated2');
+    });
+    $(".album3 .ytlabel").on("click", function(e) {
+        e.preventDefault();
+        $(this).next().slideToggle(1000);
+        $(".album3 .arrow-right").toggleClass('rotated2');
     });
     //artist info//
     $(".artistinfoswitch").on("click", function(e) {
