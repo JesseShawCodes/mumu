@@ -29,6 +29,11 @@ h1, h2 {
 
 /*Form*/
 
+.logo {
+    width: 150px;
+    margin-right: 20px;
+}
+
 form {
     display: inline-block;
 }
@@ -84,6 +89,7 @@ h2 {
 .album1, .album2, .album3 {
     padding: 0px 10px 0px 10px;
     margin: auto;
+    /* display: inline-block; */
 }
 
 .albums h2 {
