@@ -219,4 +219,14 @@ footer {
     .artistinfo img {
         width: 250px;
     }
+    /*Landing Page*/
+    .linktoapp {
+        margin: auto 0px;
+    }
+    .projdescription {
+        font-size: 22px;
+    }
+    .landinglogo img {
+        width: 200px;
+    }
 }
