@@ -85,6 +85,13 @@ h2 {
     
 }
 
+.albumsection h3:hover {
+    background-color: #ff3701;
+}
+
+.searchresults {
+    background-color: #ff3701
+}
 
 .album1, .album2, .album3 {
     padding: 0px 10px 0px 10px;
@@ -155,6 +162,38 @@ footer {
     color: #D4DCE3;
     position: absolute;
     width: 100%;
+}
+
+/*Landing page*/
+
+.landinglogo {
+    text-align: center;
+    margin: 0px auto;
+    width: 400px;
+}
+
+.landinglogo img {
+    width: 300px;
+    margin: 0px auto;
+}
+
+.projdescription {
+    background-color: #FC4A1A;
+    color: #D4DCE3;
+    font-size: 20px;
+}
+
+.inputform {
+    text-align: center;
+    width: 100%;
+}
+
+.linktoapp {
+    background-color: #FC4A1A;
+    color: #D4DCE3;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
 }
 
 /*Hidden*/
