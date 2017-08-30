@@ -140,6 +140,7 @@ function getArtistInfo(searchTerm) {
 function watchSubmit() {
     $("form").on("submit", function(e) {
         e.preventDefault();
+        $(".albums").removeClass("hidden");
         $(".artistinfo").remove();
         $(".js-search-results").append(`<div class="artistinfo"></div>`)
         $("footer").removeClass("hidden");
