@@ -93,11 +93,12 @@ h2 {
 }
 
 .albumsection h3:hover {
-    background-color: #ff3701;
+    background-color: #4ABDAC;
 }
 
 .searchresults {
-    background-color: #ff3701
+    background-color: #4ABDAC;
+
 }
 
 .album1, .album2, .album3 {
