@@ -52,14 +52,8 @@ form {
 }
 
 .submit {
-    width: 200px;
-    height: 30px;
-    display: block;
-    border: 0px;
-    background: #FC4A1A;
-    color: #D4DCE3;
-    font-size: 18px;
-    margin: auto;
+    background-color: #FC4A1A;
+    color: #D3DCE3;
     margin-top: 8px;
 }
 
@@ -195,6 +189,13 @@ footer a:hover {
     .albums img {
         width: 300px;
     }
+
+}
+
+@media screen and (max-width: 700px) {
+    .titlecard {
+        background-color: #FC4A1A;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -218,4 +219,6 @@ footer a:hover {
     .landinglogo img {
         width: 200px;
     }
+
 }
+
