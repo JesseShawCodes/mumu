@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
-    font-style: sans-serif;
+    /* font-style: sans-serif; */
 }
 
 body {
     background-color: #4ABDAC;
-    font-family: sans-serif;
+    /*font-family: sans-serif; */
 }
 
 main {
@@ -69,6 +69,11 @@ form {
 
 h2 {
     text-align: center;
+    margin-top: 10px;
+}
+
+.artistinfoswitch.showfields > h2 {
+    margin-top: 10px;
 }
 
 .artistinfo p {
@@ -168,6 +173,15 @@ footer {
     color: #D4DCE3;
     position: absolute;
     width: 100%;
+}
+
+footer a {
+    color: #D4DCE3;
+}
+
+footer a:hover {
+    color: #D3DCE3;
+    text-decoration: underline;
 }
 
 
