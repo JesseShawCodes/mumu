@@ -140,6 +140,8 @@ function getArtistInfo(searchTerm) {
 function watchSubmit() {
     $("form").on("submit", function(e) {
         e.preventDefault();
+        $(".masthead").addClass("minimize");
+        $(".masthead img, .masthead h1").addClass("hidden");
         $(".albums").removeClass("hidden");
         $(".artistinfo").remove();
         $(".js-search-results").append(`<div class="artistinfo"></div>`)
