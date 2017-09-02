@@ -22,6 +22,10 @@ header img {
     width: 200px;
 }
 
+.resize img {
+    width: 50px;
+}
+
 
 /*Headers*/
 
@@ -182,6 +186,10 @@ footer h2 {
 
 footer a {
     color: #222;
+}
+
+footer img {
+    width: 50px;
 }
 
 
