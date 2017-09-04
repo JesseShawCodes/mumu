@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+}
+
 
 body {
     background-color: #4ABDAC;
@@ -457,6 +461,7 @@ footer a:hover {
 @media screen and (max-width: 700px) {
     #homeheading {
         background-color: #FC4A1A;
+        width: 80%;
     }
 }
 
