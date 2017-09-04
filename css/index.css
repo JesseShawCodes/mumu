@@ -12,6 +12,7 @@ body {
 main {
     margin: auto 0px;
     text-align: center;
+    overflow: hidden;
 }
 
 /*Styling*/
@@ -205,9 +206,10 @@ header.masthead .header-content .header-content-inner p{
 
 
 .bg-primary ol {
-    text-align: left;
     margin-bottom: 30px;
+    text-align: left;
 }
+
 
 .bg-primary ol a {
     color: #fff;
@@ -231,6 +233,11 @@ img {
 
 #contact h2 {
     color: black;
+}
+
+.contactp {
+    align-content: center;
+    margin: auto;
 }
 
 .contactpoints {
