@@ -1,6 +1,10 @@
 # Mumu
 
 ![screenshot 1](images/screenshotsGithub/1.jpg)
+![screenshot 2](images/screenshotsGithub/2.jpg)
+![screenshot 3](images/screenshotsGithub/3.jpg)
+![screenshot 4](images/screenshotsGithub/4.jpg)
+
 
 Click [here](https://pages.github.com/) to demo this application.
 
