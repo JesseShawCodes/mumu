@@ -1,14 +1,9 @@
 # Mumu
 <p align="center">
     <img width="460" src="images/screenshotsGithub/1.jpg">
-    <img width="460" src="images/screenshotsGithub/1.jpg">
-    <img width="460" src="images/screenshotsGithub/1.jpg">
-    <img width="460" src="images/screenshotsGithub/1.jpg">
-</p>
-
-
-<p align="center">
-  <img width="460" src="http://www.fillmurray.com/460/300">
+    <img width="460" src="images/screenshotsGithub/2.jpg">
+    <img width="460" src="images/screenshotsGithub/3.jpg">
+    <img width="460" src="images/screenshotsGithub/4.jpg">
 </p>
 
 Click [here](https://pages.github.com/) to demo this application.
