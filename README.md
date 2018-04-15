@@ -5,6 +5,9 @@
 ![screenshot 3](images/screenshotsGithub/3.jpg)
 ![screenshot 4](images/screenshotsGithub/4.jpg)
 
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
 
 Click [here](https://pages.github.com/) to demo this application.
 
