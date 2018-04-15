@@ -14,7 +14,7 @@ This project incorporates HTML, CSS, Javascript, and jQuery. The last.fm and You
 
 This project took about one week from its initial conception, to version 1.0.
 
-##API's used
+## API's used
 
 Mumu is powered by the [Last.fm](https://www.last.fm/api) and [YouTube](https://developers.google.com/youtube/) API's.
 
