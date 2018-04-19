@@ -16,7 +16,7 @@ This project took about one week from its initial conception, to version 1.0.
 
 ## How to use
 
-
+Mumu is a music search engine that returns the top 3 album results for any artist. Furthermore, YouTube links are also returned to listen to any of those albums.
 
 ## Technology
 
