@@ -14,7 +14,7 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const API_KEY = "AIzaSyB5wDWKKvdRnOYBrt1dLh7U1vOKKnvsgo4";
 
 function getYouTube(searchTerm, albums, callback) {
-    var ytResults = `<h4>${results.items}</h4>`
+    // var ytResults = `<h4>${results.items}</h4>`
     const query = {
         q: `${searchTerm} ${albums[0]}`,
         part: 'snippet',
