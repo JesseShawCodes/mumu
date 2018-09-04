@@ -8,7 +8,6 @@ Registered to	bquietndrive87
 var key = "48a68fa743a6e709380166a2342c0c27";
 var url = "https://ws.audioscrobbler.com/2.0/";
 
-
 //Youtube Search API
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const API_KEY = "AIzaSyB5wDWKKvdRnOYBrt1dLh7U1vOKKnvsgo4";
