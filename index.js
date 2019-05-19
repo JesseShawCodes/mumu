@@ -10,7 +10,7 @@ var url = "https://ws.audioscrobbler.com/2.0/";
 
 //Youtube Search API
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
-const API_KEY = "AIzaSyB5wDWKKvdRnOYBrt1dLh7U1vOKKnvsgo4";
+const API_KEY = "AIzaSyCF8fK9gePzl1ysSR1kRvWv189eK2t0gSg";
 
 function getYouTube(searchTerm, albums, callback) {
     // var ytResults = `<h4>${results.items}</h4>`
